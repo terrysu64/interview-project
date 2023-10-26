@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rainmaker Intern Project
 
-## Getting Started
+## setup
 
-First, run the development server:
+1. Install dependencies: `yarn`
+2. Start: `yarn dev`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Overview:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This repository is a bare bones Next.js + Tailwind CSS + TypeScript project for calculating slippage on a DEX trade. It's intended to exercise and evaluate usage of ethers, TypeScript, Ethereum contracts, and related components.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Objective:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Fork this repository.
+2. Update `quote.ts` and follow along with the comments to implement a swap/slippage estimator.
+3. Output results on main page
+4. Commit your changes and share the results with us.
 
-## Learn More
+### Extension
 
-To learn more about Next.js, take a look at the following resources:
+Create a UI where a user can select "from" and "to" tokens, input the amount they want to trade, and view the output & slippage in the UI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Tips:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- As with much of blockchain coding, this project doesn't require much code to accomplish the goal. It's mostly an exercise of reading documentation and understanding how to use the tools available.
+- ChatGPT can probably solve most of this project for you, but that kinda defeats the purpose. If you want to use it for inspiration, go nuts, but we intend to ask some followup questions and it'll be important that you know what your code does.
+- If you get stuck, don't hesitate to reach out for help! Push your progress and reach out. Let's collaborate.
+- We've included the extension so that you can showcase your design prowess or UI skills if you'd like. Please focus on getting the swap/slippage task done first.
 
-## Deploy on Vercel
+### Contact:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- https://rainmaker.nyc
+- brent@rainmaker.nyc
