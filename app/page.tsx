@@ -3,12 +3,17 @@ import Image from "next/image";
 import { getQuote } from "@/quote";
 import { USDC, ETH } from "@/tokens";
 import { BigNumber } from "ethers";
+import { useState } from "react";
 
 const FROM_TOKEN = USDC;
 const FROM_AMOUNT = BigNumber.from("1000000");
 const TO_TOKEN = ETH;
 
 export default function Home() {
+
+  const [swapBalance, setSwapBalance] = useState(BigNumber.from("0"))
+  const [slippagePercent, setSlippagePrecent] = useState(0)
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -38,11 +43,22 @@ export default function Home() {
 
       <div className="relative flex place-items-center">
         <button
-          onClick={() => getQuote(FROM_TOKEN, TO_TOKEN, FROM_AMOUNT)}
+          onClick={() => {
+            getQuote(FROM_TOKEN, TO_TOKEN, FROM_AMOUNT).then(quote => {
+              setSwapBalance(quote.swapBalance)
+              setSlippagePrecent(quote.slippagePercent)
+            })
+            
+          }}
           className="text-black-600 bg-slate-50 p-4 rounded-lg"
         >
           Get Quote
         </button>
+      </div>
+
+      <div>
+        <h1>{`Swap Balance: ${swapBalance}`}</h1>
+        <h1>{`Slippage Percentage: ${slippagePercent}%`}</h1>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
